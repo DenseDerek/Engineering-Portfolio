@@ -1,0 +1,453 @@
+export default function Home() {
+  const projects = [
+    {
+      title: "Kitchen Aid Arm",
+      subtitle: "Engineering Design (Group)",
+      challenge:
+        "Optimize a 3D-printed arm for range, strength, appearance, and cost while balancing design constraints in a team setting.",
+      solution:
+        "Iterated through multiple prototypes and collaborated on a wall-mounted 3D-printed arm system designed in SolidWorks, improving layout and functionality through testing and refinement.",
+      highlights: ["3D-printed prototype", "Multiple iterations", "Team design project"],
+      tags: ["SolidWorks", "Prototyping", "Design"],
+      image:
+        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Wall Mounted Can Crusher",
+      subtitle: "Engineering Graphics I (Group)",
+      challenge:
+        "Design a complete wall-mounted can crusher assembly and communicate the design clearly through engineering drawings and CAD models.",
+      solution:
+        "Created engineering drawings, modeled complex interacting parts in SolidWorks, and presented a complete can crusher assembly as a functional system.",
+      highlights: ["Full CAD assembly", "Engineering drawings", "Presented final design"],
+      tags: ["SolidWorks", "Assemblies", "Drawings"],
+      image:
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Steel Heart Fabrication",
+      subtitle: "Wentworth Society of Manufacturing",
+      challenge:
+        "Fabricate a clean finished piece requiring accurate measuring, machining, welding, and finishing.",
+      solution:
+        "Used calipers, micrometers, manual milling techniques, MIG welding, sanding, and protective coating processes to fabricate and finish a steel heart assembly mounted to a base plate.",
+      highlights: ["Manual machining", "MIG welding", "Finished and coated"],
+      tags: ["Manufacturing", "Milling", "Welding"],
+      image:
+        "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1200&q=80",
+    },
+  ];
+
+  const skills = {
+    Software: [
+      "SolidWorks",
+      "MATLAB",
+      "Python",
+      "Bambu Studio",
+      "Multisim",
+      "Microsoft Office",
+    ],
+    Manufacturing: [
+      "Manual Milling",
+      "3D Printing",
+      "Countersinking",
+      "Tapping",
+      "Brake Press",
+      "PEM Installation",
+    ],
+    "Lab & Fabrication": [
+      "MIG Welding",
+      "Surface Finishing",
+      "EZ Sander",
+      "Time Saver",
+      "Calipers",
+      "Micrometers",
+    ],
+    Engineering: [
+      "Engineering Drawings",
+      "Prototype Iteration",
+      "CAD Assemblies",
+      "Team Design",
+      "Problem Solving",
+      "Presentation",
+    ],
+  };
+
+  const experience = [
+    {
+      company: "Kalow Technology",
+      role: "Intern",
+      date: "May 2025 – Sep 2025",
+      location: "Rutland, VT",
+      bullets: [
+        "Operated and assisted in manufacturing processes including countersinking, tapping, brake press operation, PEM installation, and surface finishing equipment such as EZ Sander and Time Saver.",
+        "Interpreted engineering drawings independently to set up and execute machining tasks with minimal supervision.",
+        "Supported powder coating operations including masking, hanging, and storing finished components while maintaining quality standards.",
+        "Worked in a fast-paced production environment while maintaining attention to detail and meeting output goals.",
+      ],
+    },
+    {
+      company: "Wentworth Society of Manufacturing",
+      role: "Member",
+      date: "Current",
+      location: "Wentworth Institute of Technology",
+      bullets: [
+        "Fabricated a manual milling project using calipers, micrometers, and multiple machining techniques.",
+        "Built a steel heart design by cutting and bending steel stock, MIG welding the structure to a base plate, and finishing the assembly through sanding and protective coating.",
+      ],
+    },
+  ];
+
+  return (
+    <main className="min-h-screen bg-[#f5f5f2] text-[#1f2937]">
+      <nav className="sticky top-0 z-50 border-b border-[#315c7a]/10 bg-[#f5f5f2]/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#315c7a]/70">
+              Engineering Portfolio
+            </p>
+            <h1 className="text-lg font-semibold text-[#315c7a]">Derek Li</h1>
+          </div>
+
+          <div className="hidden gap-6 text-sm md:flex">
+            <a href="#projects" className="text-[#315c7a] hover:text-[#f28c28]">
+              Projects
+            </a>
+            <a href="#skills" className="text-[#315c7a] hover:text-[#f28c28]">
+              Skills
+            </a>
+            <a href="#about" className="text-[#315c7a] hover:text-[#f28c28]">
+              About
+            </a>
+            <a href="#contact" className="text-[#315c7a] hover:text-[#f28c28]">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1.2fr_0.8fr]">
+        <div className="space-y-8">
+          <div className="inline-block rounded-full border border-[#315c7a]/15 bg-white px-4 py-2 text-sm text-[#315c7a]">
+            Mechanical Engineering • Design • Manufacturing • Prototyping
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-5xl font-bold tracking-tight text-[#1f2937] md:text-7xl">
+              Derek Li
+            </h2>
+            <p className="max-w-2xl text-lg leading-8 text-[#4b5563]">
+              Mechanical Engineering student at Wentworth Institute of Technology
+              with hands-on experience in CAD, manufacturing, fabrication, and
+              prototype development. I enjoy turning designs into physical builds
+              and improving them through testing and iteration.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="rounded-2xl bg-[#f28c28] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            >
+              View Projects
+            </a>
+            <a
+              href="https://www.linkedin.com/in/-derek-li/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-2xl border border-[#315c7a]/20 bg-white px-6 py-3 text-sm font-semibold text-[#315c7a] transition hover:bg-[#315c7a]/5"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="#contact"
+              className="rounded-2xl border border-[#315c7a]/20 bg-white px-6 py-3 text-sm font-semibold text-[#315c7a] transition hover:bg-[#315c7a]/5"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-[#315c7a]/10 bg-white p-6 shadow-sm">
+          <p className="mb-5 text-sm uppercase tracking-[0.25em] text-[#315c7a]/70">
+            Quick Snapshot
+          </p>
+
+          <div className="grid gap-4">
+            <div className="rounded-2xl bg-[#f5f5f2] p-5">
+              <p className="text-3xl font-bold text-[#1f2937]">2028</p>
+              <p className="mt-1 text-sm text-[#6b7280]">Expected Graduation</p>
+            </div>
+            <div className="rounded-2xl bg-[#f5f5f2] p-5">
+              <p className="text-3xl font-bold text-[#1f2937]">3.3 / 4.0</p>
+              <p className="mt-1 text-sm text-[#6b7280]">GPA</p>
+            </div>
+            <div className="rounded-2xl bg-[#f5f5f2] p-5">
+              <p className="text-3xl font-bold text-[#1f2937]">Hands-On</p>
+              <p className="mt-1 text-sm text-[#6b7280]">
+                CAD, machining, manufacturing, and fabrication
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-8">
+        <div className="rounded-3xl border border-[#315c7a]/10 bg-white p-8 shadow-sm">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#315c7a]/70">
+            Color Strategy
+          </p>
+          <h3 className="text-3xl font-bold text-[#1f2937]">
+            Built with the 60-30-10 Rule
+          </h3>
+          <p className="mt-3 max-w-3xl leading-7 text-[#4b5563]">
+            60% neutral base for readability, 30% steel-blue for structure and
+            branding, and 10% orange for calls to action and visual emphasis.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-[#315c7a]/10 p-5">
+              <div className="mb-4 h-16 rounded-xl bg-[#f5f5f2]" />
+              <p className="font-semibold text-[#1f2937]">60% Base</p>
+              <p className="mt-2 text-sm text-[#6b7280]">
+                Clean neutral background for a professional engineering feel.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-[#315c7a]/10 p-5">
+              <div className="mb-4 h-16 rounded-xl bg-[#315c7a]" />
+              <p className="font-semibold text-[#1f2937]">30% Secondary</p>
+              <p className="mt-2 text-sm text-[#6b7280]">
+                Steel-blue for navigation, headings, and structure.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-[#315c7a]/10 p-5">
+              <div className="mb-4 h-16 rounded-xl bg-[#f28c28]" />
+              <p className="font-semibold text-[#1f2937]">10% Accent</p>
+              <p className="mt-2 text-sm text-[#6b7280]">
+                Orange for buttons and action items.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mb-10">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#315c7a]/70">
+            Selected Work
+          </p>
+          <h3 className="text-4xl font-bold text-[#1f2937]">Projects</h3>
+        </div>
+
+        <div className="grid gap-8">
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className="overflow-hidden rounded-3xl border border-[#315c7a]/10 bg-white shadow-sm"
+            >
+              <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="min-h-[280px]">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+
+                <div className="p-8">
+                  <h4 className="text-2xl font-bold text-[#1f2937]">
+                    {project.title}
+                  </h4>
+                  <p className="mt-1 text-sm text-[#6b7280]">{project.subtitle}</p>
+
+                  <div className="mt-6 grid gap-4 md:grid-cols-2">
+                    <div className="rounded-2xl bg-[#f5f5f2] p-5">
+                      <p className="mb-2 text-xs uppercase tracking-[0.25em] text-[#315c7a]/70">
+                        Challenge
+                      </p>
+                      <p className="text-sm leading-7 text-[#4b5563]">
+                        {project.challenge}
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl bg-[#f5f5f2] p-5">
+                      <p className="mb-2 text-xs uppercase tracking-[0.25em] text-[#315c7a]/70">
+                        Solution
+                      </p>
+                      <p className="text-sm leading-7 text-[#4b5563]">
+                        {project.solution}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 grid gap-3 md:grid-cols-3">
+                    {project.highlights.map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-2xl border border-[#315c7a]/10 p-4 text-sm font-medium text-[#315c7a]"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-[#315c7a]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-[#315c7a]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="skills" className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mb-10">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#315c7a]/70">
+            Technical Capabilities
+          </p>
+          <h3 className="text-4xl font-bold text-[#1f2937]">Skills</h3>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {Object.entries(skills).map(([category, items]) => (
+            <div
+              key={category}
+              className="rounded-3xl border border-[#315c7a]/10 bg-white p-6 shadow-sm"
+            >
+              <h4 className="text-xl font-bold text-[#1f2937]">{category}</h4>
+              <div className="mt-5 space-y-3">
+                {items.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl bg-[#f5f5f2] px-4 py-3 text-sm text-[#4b5563]"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="about"
+        className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:grid-cols-[0.95fr_1.05fr]"
+      >
+        <div className="rounded-3xl border border-[#315c7a]/10 bg-white p-8 shadow-sm">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#315c7a]/70">
+            About
+          </p>
+          <h3 className="text-4xl font-bold text-[#1f2937]">Who I Am</h3>
+          <p className="mt-6 leading-8 text-[#4b5563]">
+            I am a Mechanical Engineering student at Wentworth Institute of
+            Technology in Boston, Massachusetts, expected to graduate in August
+            2028. My interests are centered around hands-on engineering work,
+            especially CAD, machining, manufacturing, and turning ideas into
+            real working builds.
+          </p>
+
+          <div className="mt-8 rounded-2xl bg-[#f5f5f2] p-5">
+            <p className="text-sm uppercase tracking-[0.25em] text-[#315c7a]/70">
+              Education
+            </p>
+            <p className="mt-3 text-lg font-semibold text-[#1f2937]">
+              Wentworth Institute of Technology
+            </p>
+            <p className="text-[#4b5563]">B.S. in Mechanical Engineering</p>
+            <p className="mt-2 text-[#4b5563]">
+              Expected Graduation: Aug. 2028 • GPA: 3.3 / 4.0
+            </p>
+            <p className="mt-3 text-sm leading-7 text-[#6b7280]">
+              Related coursework: Thermodynamics I, Engineering Design,
+              Engineering Graphics, Engineering Statics, Physics II
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-[#315c7a]/10 bg-white p-8 shadow-sm">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#315c7a]/70">
+            Experience
+          </p>
+          <h3 className="text-4xl font-bold text-[#1f2937]">What I’ve Done</h3>
+
+          <div className="mt-8 space-y-5">
+            {experience.map((job) => (
+              <div key={job.company} className="rounded-2xl bg-[#f5f5f2] p-5">
+                <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <p className="text-xl font-semibold text-[#1f2937]">
+                      {job.company}
+                    </p>
+                    <p className="text-[#4b5563]">
+                      {job.role} • {job.location}
+                    </p>
+                  </div>
+                  <p className="text-sm text-[#6b7280]">{job.date}</p>
+                </div>
+
+                <div className="mt-4 space-y-2">
+                  {job.bullets.map((bullet) => (
+                    <p key={bullet} className="text-sm leading-7 text-[#4b5563]">
+                      • {bullet}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="mx-auto max-w-7xl px-6 py-16">
+        <div className="rounded-3xl bg-[#315c7a] p-8 text-white shadow-sm md:p-10">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-white/70">
+            Contact
+          </p>
+          <h3 className="text-4xl font-bold">Let’s Connect</h3>
+          <p className="mt-5 max-w-2xl leading-8 text-white/80">
+            I’m always looking to learn, build, and connect with new opportunities
+            in engineering, manufacturing, and design.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="mailto:LiD9@wit.edu"
+              className="rounded-2xl bg-[#f28c28] px-6 py-3 text-sm font-semibold text-white"
+            >
+              LiD9@wit.edu
+            </a>
+            <a
+              href="https://www.linkedin.com/in/-derek-li/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="tel:3477021867"
+              className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white"
+            >
+              347.702.1867
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-[#315c7a]/10 px-6 py-8 text-center text-sm text-[#6b7280]">
+        © 2026 Derek Li • Mechanical Engineering Portfolio
+      </footer>
+    </main>
+  );
+}
