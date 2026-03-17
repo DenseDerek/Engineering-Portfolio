@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derek Li | Engineering Portfolio</title>
+  <meta
+    name="description"
+    content="Mechanical Engineering portfolio for Derek Li featuring projects, skills, experience, and contact information."
+  />
+  <style>
+    :root {
+      --bg: #f5f5f2;         /* 60% base */
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6574;
+      --secondary: #315c7a;  /* 30% secondary */
+      --secondary-soft: #e9eef3;
+      --accent: #f28c28;     /* 10% accent */
+      --border: rgba(49, 92, 122, 0.12);
+      --shadow: 0 10px 30px rgba(31, 41, 55, 0.06);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }https://chatgpt.com/
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(245, 245, 242, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      gap: 16px;
+    }
+
+    .brand-top {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      opacity: 0.75;
+    }
+
+    .brand-name {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--secondary);
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 64px 0 32px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--secondary);
+      font-size: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    h1, h2, h3, h4, p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 8vw, 88px);
+      line-height: 0.96;
+      margin: 18px 0 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p.lead {
+      max-width: 760px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      border-radius: 18px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--secondary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--secondary-soft);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .snapshot {
+      padding: 24px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      opacity: 0.75;
+      margin-bottom: 16px;
+    }
+
+    .snapshot-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini {
+      background: var(--bg);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(49, 92, 122, 0.08);
+    }
+
+    .mini strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    section {
+      padding: 28px 0 44px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1;
+      margin-bottom: 0;
+    }
+
+    .section-head p {
+      max-width: 620px;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .projects {
+      display: grid;
+      gap: 26px;
+    }
+
+    .project {
+      overflow: hidden;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .project-image {
+      min-height: 300px;
+      background: linear-gradient(135deg, #dfe7ee, #f7f8fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 22px;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .project-content {
+      padding: 28px;
+    }
+
+    .project-num {
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      opacity: 0.65;
+      margin-bottom: 8px;
+    }
+
+    .project h3 {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .challenge-solution {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .info-box {
+      background: var(--bg);
+      border: 1px solid rgba(49, 92, 122, 0.08);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .info-box .label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      opacity: 0.72;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      border: 1px solid rgba(49, 92, 122, 0.12);
+      border-radius: 18px;
+      padding: 14px;
+      color: var(--secondary);
+      font-size: 14px;
+      font-weight: 700;
+      background: white;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--secondary-soft);
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .skills-grid,
+    .two-col-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .skill-card,
+    .panel {
+      padding: 24px;
+    }
+
+    .skill-card h3,
+    .panel h3 {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .skill-list,
+    .bullet-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .skill-item {
+      background: var(--bg);
+      border-radius: 16px;
+      padding: 12px 14px;
+      color: var(--muted);
+      border: 1px solid rgba(49, 92, 122, 0.08);
+    }
+
+    .two-col-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .experience-item {
+      background: var(--bg);
+      border: 1px solid rgba(49, 92, 122, 0.08);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .exp-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .exp-top strong {
+      font-size: 20px;
+    }
+
+    .exp-meta {
+      color: var(--muted);
+    }
+
+    .bullet-list p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: var(--secondary);
+      color: white;
+      padding: 32px;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.82);
+      max-width: 700px;
+    }
+
+    .contact .eyebrow {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn-outline-light {
+      border: 1px solid rgba(255,255,255,0.22);
+      color: white;
+      background: transparent;
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 22px 0 36px;
+    }
+
+    @media (max-width: 1000px) {
+      .hero,
+      .project-grid,
+      .skills-grid,
+      .two-col-grid,
+      .challenge-solution {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .project-content,
+      .panel,
+      .skill-card,
+      .snapshot,
+      .contact {
+        padding: 20px;
+      }
+
+      .hero p.lead {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div>
+        <div class="brand-top">Engineering Portfolio</div>
+        <div class="brand-name">Derek Li</div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#projects">Case Studies</a>
+        <a href="#skills">Capabilities</a>
+        <a href="#about">About & Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="container hero">
+    <div>
+      <div class="pill">Mechanical Engineering • Design • Manufacturing • Prototyping</div>
+      <h1>Derek Li</h1>
+      <p class="lead">
+        Mechanical Engineering student at Wentworth Institute of Technology focused on
+        CAD, machining, fabrication, and hands-on problem solving. I enjoy taking ideas
+        from concept to build through iteration, manufacturing, and practical design work.
+      </p>
+
+      <div class="button-row">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/-derek-li/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn btn-secondary" href="#about">Experience</a>
+      </div>
+    </div>
+
+    <aside class="card snapshot">
+      <div class="eyebrow">Quick Snapshot</div>
+      <div class="snapshot-grid">
+        <div class="mini">
+          <strong>2028</strong>
+          Expected Graduation
+        </div>
+        <div class="mini">
+          <strong>3.3 / 4.0</strong>
+          Current GPA
+        </div>
+        <div class="mini">
+          <strong>Hands-On</strong>
+          CAD, manufacturing, machining, and fabrication experience
+        </div>
+      </div>
+    </aside>
+  </header>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Selected Work</div>
+          <h2>Engineering Case Studies</h2>
+        </div>
+        <p>
+          This layout follows the same overall structure as the reference portfolio:
+          each project is presented as a mini case study with challenge, solution,
+          impact, and tools used. :contentReference[oaicite:1]{index=1}
+        </p>
+      </div>
+
+      <div class="projects">
+        <article class="card project">
+          <div class="project-grid">
+            <div class="project-image">Project Image Placeholder<br />Kitchen Aid Arm</div>
+            <div class="project-content">
+              <div class="project-num">Project 01</div>
+              <h3>Kitchen Aid Arm</h3>
+              <div class="subtitle">Engineering Design (Group) • Design, prototyping, and optimization</div>
+
+              <div class="challenge-solution">
+                <div class="info-box">
+                  <div class="label">The Challenge</div>
+                  Optimize a 3D-printed arm for range, strength, appearance, efficiency, and cost while balancing design constraints in a team setting.
+                </div>
+                <div class="info-box">
+                  <div class="label">The Solution</div>
+                  Iterated through multiple prototypes and collaborated on a wall-mounted 3D-printed arm system designed in SolidWorks, refining layout and functionality through testing.
+                </div>
+              </div>
+
+              <div class="metric-grid">
+                <div class="metric">Multiple Iterations</div>
+                <div class="metric">3D-Printed Prototype</div>
+                <div class="metric">Team-Based Design</div>
+              </div>
+
+              <div class="tags">
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Prototyping</span>
+                <span class="tag">Design</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-grid">
+            <div class="project-image">Project Image Placeholder<br />Can Crusher</div>
+            <div class="project-content">
+              <div class="project-num">Project 02</div>
+              <h3>Wall Mounted Can Crusher</h3>
+              <div class="subtitle">Engineering Graphics I (Group) • CAD modeling and assembly design</div>
+
+              <div class="challenge-solution">
+                <div class="info-box">
+                  <div class="label">The Challenge</div>
+                  Design and model a complete wall-mounted can crusher that functions as a full assembly and communicates design intent clearly through engineering drawings.
+                </div>
+                <div class="info-box">
+                  <div class="label">The Solution</div>
+                  Created engineering drawings, modeled complex interacting parts in SolidWorks, and presented a complete can crusher assembly as a functional system.
+                </div>
+              </div>
+
+              <div class="metric-grid">
+                <div class="metric">Full Assembly Model</div>
+                <div class="metric">Presented Design</div>
+                <div class="metric">Complex Part Modeling</div>
+              </div>
+
+              <div class="tags">
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Assemblies</span>
+                <span class="tag">Drawings</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-grid">
+            <div class="project-image">Project Image Placeholder<br />Steel Heart Fabrication</div>
+            <div class="project-content">
+              <div class="project-num">Project 03</div>
+              <h3>Steel Heart Fabrication</h3>
+              <div class="subtitle">Wentworth Society of Manufacturing • Fabrication project</div>
+
+              <div class="challenge-solution">
+                <div class="info-box">
+                  <div class="label">The Challenge</div>
+                  Fabricate a precise project requiring accurate measurement, manual machining, welding, finishing, and a clean final presentation.
+                </div>
+                <div class="info-box">
+                  <div class="label">The Solution</div>
+                  Used calipers, micrometers, manual milling, MIG welding, sanding, and protective coating processes to fabricate and finish a steel heart assembly mounted to a base plate.
+                </div>
+              </div>
+
+              <div class="metric-grid">
+                <div class="metric">Manual Machining</div>
+                <div class="metric">MIG Welded</div>
+                <div class="metric">Finished + Coated</div>
+              </div>
+
+              <div class="tags">
+                <span class="tag">Manufacturing</span>
+                <span class="tag">Milling</span>
+                <span class="tag">Welding</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Technical Capabilities</div>
+          <h2>Skills</h2>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="card skill-card">
+          <h3>Software</h3>
+          <div class="skill-list">
+            <div class="skill-item">SolidWorks</div>
+            <div class="skill-item">MATLAB</div>
+            <div class="skill-item">Python</div>
+            <div class="skill-item">Bambu Studio</div>
+            <div class="skill-item">Multisim</div>
+            <div class="skill-item">Microsoft Office</div>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Manufacturing</h3>
+          <div class="skill-list">
+            <div class="skill-item">Manual Milling</div>
+            <div class="skill-item">3D Printing</div>
+            <div class="skill-item">Countersinking</div>
+            <div class="skill-item">Tapping</div>
+            <div class="skill-item">Brake Press</div>
+            <div class="skill-item">PEM Installation</div>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Lab & Fabrication</h3>
+          <div class="skill-list">
+            <div class="skill-item">MIG Welding</div>
+            <div class="skill-item">Surface Finishing</div>
+            <div class="skill-item">EZ Sander</div>
+            <div class="skill-item">Time Saver</div>
+            <div class="skill-item">Calipers</div>
+            <div class="skill-item">Micrometers</div>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Engineering</h3>
+          <div class="skill-list">
+            <div class="skill-item">Engineering Drawings</div>
+            <div class="skill-item">Prototype Iteration</div>
+            <div class="skill-item">CAD Assemblies</div>
+            <div class="skill-item">Team Design Projects</div>
+            <div class="skill-item">Problem Solving</div>
+            <div class="skill-item">Presentation Skills</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container two-col-grid">
+      <div class="card panel">
+        <div class="eyebrow">About</div>
+        <h2>Who I Am</h2>
+        <p>
+          I am a Mechanical Engineering student at Wentworth Institute of Technology
+          in Boston, Massachusetts, expected to graduate in August 2028. My interests
+          are centered around hands-on engineering work, especially CAD, machining,
+          manufacturing, and turning ideas into real working builds.
+        </p>
+
+        <div class="info-box" style="margin-top: 22px;">
+          <div class="label">Education</div>
+          <strong>Wentworth Institute of Technology</strong><br />
+          B.S. in Mechanical Engineering<br />
+          Expected Graduation: Aug. 2028 • GPA: 3.3 / 4.0<br /><br />
+          Related coursework: Thermodynamics I, Engineering Design, Engineering Graphics,
+          Engineering Statics, and Physics II.
+        </div>
+      </div>
+
+      <div class="card panel">
+        <div class="eyebrow">Experience</div>
+        <h2>What I’ve Done</h2>
+
+        <div class="experience-item">
+          <div class="exp-top">
+            <div>
+              <strong>Kalow Technology</strong>
+              <div class="exp-meta">Intern • Rutland, VT</div>
+            </div>
+            <div class="exp-meta">May 2025 – Sep 2025</div>
+          </div>
+          <div class="bullet-list">
+            <p>• Operated and assisted in manufacturing processes including countersinking, tapping, brake press operation, PEM installation, and surface finishing equipment.</p>
+            <p>• Interpreted engineering drawings independently to set up and execute machining tasks with minimal supervision.</p>
+            <p>• Supported powder coating operations including masking, hanging, and storing finished components while maintaining quality standards.</p>
+            <p>• Worked in a fast-paced production environment with strong attention to detail and daily output goals.</p>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-top">
+            <div>
+              <strong>Wentworth Society of Manufacturing</strong>
+              <div class="exp-meta">Member • Wentworth Institute of Technology</div>
+            </div>
+            <div class="exp-meta">Current</div>
+          </div>
+          <div class="bullet-list">
+            <p>• Fabricated a manual milling project using calipers, micrometers, and multiple machining techniques.</p>
+            <p>• Built a steel heart design by cutting and bending steel stock, MIG welding the structure to a base plate, and finishing the assembly through sanding and protective coating.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="card contact">
+        <div class="eyebrow">Contact</div>
+        <h2>Let’s Connect</h2>
+        <p>
+          I’m always looking to learn, build, and connect with new opportunities
+          in engineering, manufacturing, and design.
+        </p>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:LiD9@wit.edu">LiD9@wit.edu</a>
+          <a class="btn btn-outline-light" href="https://www.linkedin.com/in/-derek-li/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn btn-outline-light" href="tel:3477021867">347.702.1867</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2026 Derek Li • Mechanical Engineering Portfolio</div>
+  </footer>
+</body>
+</html>
