@@ -1,0 +1,17 @@
+title: Derek Li
+description: Mechanical Engineering Portfolio
+theme: minima
+url: "https://YOUR-GITHUB-USERNAME.github.io"
+baseurl: ""
+
+markdown: kramdown
+
+header_pages:
+  - index.md
+
+author:
+  name: Derek Li
+  email: LiD9@wit.edu
+
+github_username: YOUR-GITHUB-USERNAME
+linkedin_username: -derek-li
