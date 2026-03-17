@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Derek Li | Engineering Portfolio</title>
+  <title>Derek Li | Mechanical Engineering Portfolio</title>
   <meta
     name="description"
-    content="Mechanical Engineering portfolio for Derek Li featuring projects, skills, experience, and contact information."
+    content="Mechanical Engineering portfolio for Derek Li featuring projects, experience, skills, and contact information."
   />
   <style>
     :root {
-      --bg: #f5f5f2;         /* 60% base */
+      --bg: #f5f5f2;
       --surface: #ffffff;
       --text: #1f2937;
-      --muted: #5b6574;
-      --secondary: #315c7a;  /* 30% secondary */
+      --muted: #5f6b7a;
+      --secondary: #315c7a;
       --secondary-soft: #e9eef3;
-      --accent: #f28c28;     /* 10% accent */
+      --accent: #f28c28;
       --border: rgba(49, 92, 122, 0.12);
-      --shadow: 0 10px 30px rgba(31, 41, 55, 0.06);
+      --shadow: 0 10px 30px rgba(20, 30, 40, 0.07);
       --radius: 24px;
       --max: 1180px;
     }
@@ -29,7 +29,7 @@
 
     html {
       scroll-behavior: smooth;
-    }https://chatgpt.com/
+    }
 
     body {
       margin: 0;
@@ -67,8 +67,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
       gap: 16px;
+      padding: 18px 0;
     }
 
     .brand-top {
@@ -87,8 +87,9 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;
       flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
     }
 
     .nav-links a {
@@ -101,12 +102,24 @@
       color: var(--accent);
     }
 
+    .nav-resume {
+      background: var(--accent);
+      color: white !important;
+      padding: 11px 16px;
+      border-radius: 14px;
+      font-weight: 700;
+    }
+
+    .nav-resume:hover {
+      opacity: 0.92;
+    }
+
     .hero {
-      padding: 64px 0 32px;
+      padding: 64px 0 34px;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 28px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .pill {
@@ -131,7 +144,7 @@
       letter-spacing: -0.03em;
     }
 
-    .hero p.lead {
+    .lead {
       max-width: 760px;
       font-size: 19px;
       color: var(--muted);
@@ -139,8 +152,8 @@
 
     .button-row {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 14px;
       margin-top: 28px;
     }
 
@@ -183,8 +196,25 @@
       box-shadow: var(--shadow);
     }
 
-    .snapshot {
-      padding: 24px;
+    .headshot-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .headshot-image {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .headshot-info {
+      padding: 22px;
+      display: grid;
+      gap: 12px;
     }
 
     .eyebrow {
@@ -196,11 +226,6 @@
       margin-bottom: 16px;
     }
 
-    .snapshot-grid {
-      display: grid;
-      gap: 14px;
-    }
-
     .mini {
       background: var(--bg);
       border-radius: 18px;
@@ -210,13 +235,13 @@
 
     .mini strong {
       display: block;
-      font-size: 30px;
+      font-size: 26px;
       line-height: 1.1;
       margin-bottom: 6px;
     }
 
     section {
-      padding: 28px 0 44px;
+      padding: 28px 0 46px;
     }
 
     .section-head {
@@ -255,7 +280,7 @@
     }
 
     .project-image {
-      min-height: 300px;
+      min-height: 310px;
       background: linear-gradient(135deg, #dfe7ee, #f7f8fa);
       display: flex;
       align-items: center;
@@ -305,7 +330,7 @@
       padding: 18px;
     }
 
-    .info-box .label {
+    .label {
       font-size: 11px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -420,11 +445,11 @@
     .contact {
       background: var(--secondary);
       color: white;
-      padding: 32px;
+      padding: 34px;
     }
 
     .contact p {
-      color: rgba(255,255,255,0.82);
+      color: rgba(255,255,255,0.84);
       max-width: 700px;
     }
 
@@ -434,8 +459,8 @@
 
     .contact-actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 14px;
       margin-top: 20px;
     }
 
@@ -447,6 +472,17 @@
 
     .btn-outline-light:hover {
       background: rgba(255,255,255,0.08);
+    }
+
+    .site-end {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      color: rgba(255,255,255,0.82);
+      font-size: 14px;
     }
 
     footer {
@@ -473,6 +509,10 @@
       .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .headshot-image {
+        height: 520px;
+      }
     }
 
     @media (max-width: 680px) {
@@ -496,13 +536,17 @@
       .project-content,
       .panel,
       .skill-card,
-      .snapshot,
-      .contact {
+      .contact,
+      .headshot-info {
         padding: 20px;
       }
 
-      .hero p.lead {
+      .lead {
         font-size: 17px;
+      }
+
+      .headshot-image {
+        height: 380px;
       }
     }
   </style>
@@ -518,8 +562,9 @@
       <div class="nav-links">
         <a href="#projects">Case Studies</a>
         <a href="#skills">Capabilities</a>
-        <a href="#about">About & Experience</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="DerekLi_Resume.pdf" target="_blank" class="nav-resume">Resume</a>
       </div>
     </div>
   </nav>
@@ -536,14 +581,15 @@
 
       <div class="button-row">
         <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="DerekLi_Resume.pdf" target="_blank">Resume</a>
         <a class="btn btn-secondary" href="https://www.linkedin.com/in/-derek-li/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn btn-secondary" href="#about">Experience</a>
       </div>
     </div>
 
-    <aside class="card snapshot">
-      <div class="eyebrow">Quick Snapshot</div>
-      <div class="snapshot-grid">
+    <aside class="card headshot-card">
+      <img src="headshot.jpg" alt="Derek Li headshot" class="headshot-image" />
+      <div class="headshot-info">
+        <div class="eyebrow">Quick Snapshot</div>
         <div class="mini">
           <strong>2028</strong>
           Expected Graduation
@@ -553,8 +599,8 @@
           Current GPA
         </div>
         <div class="mini">
-          <strong>Hands-On</strong>
-          CAD, manufacturing, machining, and fabrication experience
+          <strong>Brandon, VT</strong>
+          Vermont-based student building hands-on engineering experience
         </div>
       </div>
     </aside>
@@ -568,9 +614,8 @@
           <h2>Engineering Case Studies</h2>
         </div>
         <p>
-          This layout follows the same overall structure as the reference portfolio:
-          each project is presented as a mini case study with challenge, solution,
-          impact, and tools used. :contentReference[oaicite:1]{index=1}
+          A clean project-focused layout where each build reads like a mini case study:
+          challenge, solution, impact, and tools used.
         </p>
       </div>
 
@@ -615,23 +660,23 @@
             <div class="project-content">
               <div class="project-num">Project 02</div>
               <h3>Wall Mounted Can Crusher</h3>
-              <div class="subtitle">Engineering Graphics I (Group) • CAD modeling and assembly design</div>
+              <div class="subtitle">Engineering Graphics • CAD modeling and assembly design</div>
 
               <div class="challenge-solution">
                 <div class="info-box">
                   <div class="label">The Challenge</div>
-                  Design and model a complete wall-mounted can crusher that functions as a full assembly and communicates design intent clearly through engineering drawings.
+                  Design and model a complete wall-mounted can crusher that functions as a full assembly and clearly communicates design intent through engineering drawings.
                 </div>
                 <div class="info-box">
                   <div class="label">The Solution</div>
-                  Created engineering drawings, modeled complex interacting parts in SolidWorks, and presented a complete can crusher assembly as a functional system.
+                  Designed, modeled, and presented a complete functional system in SolidWorks with several interacting parts assembled into one final design.
                 </div>
               </div>
 
               <div class="metric-grid">
                 <div class="metric">Full Assembly Model</div>
+                <div class="metric">Engineering Drawings</div>
                 <div class="metric">Presented Design</div>
-                <div class="metric">Complex Part Modeling</div>
               </div>
 
               <div class="tags">
@@ -732,8 +777,8 @@
             <div class="skill-item">Engineering Drawings</div>
             <div class="skill-item">Prototype Iteration</div>
             <div class="skill-item">CAD Assemblies</div>
-            <div class="skill-item">Team Design Projects</div>
             <div class="skill-item">Problem Solving</div>
+            <div class="skill-item">Team Design</div>
             <div class="skill-item">Presentation Skills</div>
           </div>
         </div>
@@ -779,7 +824,7 @@
             <p>• Operated and assisted in manufacturing processes including countersinking, tapping, brake press operation, PEM installation, and surface finishing equipment.</p>
             <p>• Interpreted engineering drawings independently to set up and execute machining tasks with minimal supervision.</p>
             <p>• Supported powder coating operations including masking, hanging, and storing finished components while maintaining quality standards.</p>
-            <p>• Worked in a fast-paced production environment with strong attention to detail and daily output goals.</p>
+            <p>• Collaborated in a fast-paced production environment while maintaining attention to detail and meeting output goals.</p>
           </div>
         </div>
 
@@ -792,8 +837,8 @@
             <div class="exp-meta">Current</div>
           </div>
           <div class="bullet-list">
-            <p>• Fabricated a manual milling project using calipers, micrometers, and multiple machining techniques.</p>
-            <p>• Built a steel heart design by cutting and bending steel stock, MIG welding the structure to a base plate, and finishing the assembly through sanding and protective coating.</p>
+            <p>• Fabricated a precise aluminum cube using manual milling, calipers, micrometers, and multiple machining techniques.</p>
+            <p>• Fabricated a steel heart design by cutting and bending steel stock, MIG welding the structure to a base plate, and finishing the assembly through sanding and protective coating.</p>
           </div>
         </div>
       </div>
@@ -806,20 +851,30 @@
         <div class="eyebrow">Contact</div>
         <h2>Let’s Connect</h2>
         <p>
-          I’m always looking to learn, build, and connect with new opportunities
-          in engineering, manufacturing, and design.
+          I’m always looking to learn, build, and connect with opportunities in
+          engineering, manufacturing, and design.
         </p>
 
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:LiD9@wit.edu">LiD9@wit.edu</a>
+          <a class="btn btn-primary" href="mailto:LiD9@wit.edu">Email Me</a>
+          <a class="btn btn-outline-light" href="DerekLi_Resume.pdf" target="_blank">View Resume</a>
           <a class="btn btn-outline-light" href="https://www.linkedin.com/in/-derek-li/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn btn-outline-light" href="tel:3477021867">347.702.1867</a>
+        </div>
+
+        <div class="site-end">
+          <div>From Brandon, Vermont</div>
+          <div>Email: LiD9@wit.edu</div>
+          <div>Website: YOUR-GITHUB-USERNAME.github.io</div>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
+    <div class="container">© 2026 Derek Li • Mechanical Engineering Portfolio</div>
+  </footer>
+</body>
+</html>
     <div class="container">© 2026 Derek Li • Mechanical Engineering Portfolio</div>
   </footer>
 </body>
