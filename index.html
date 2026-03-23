@@ -255,22 +255,23 @@
     }
 
     .project-image {
-      .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+  min-height: 300px;
+  background: linear-gradient(135deg, #dfe7ee, #f7f8fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  padding: 24px;
 }
-      min-height: 300px;
-      background: linear-gradient(135deg, #dfe7ee, #f7f8fa);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--secondary);
-      font-weight: 700;
-      font-size: 22px;
-      text-align: center;
-      padding: 24px;
-    }
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
     .project-content {
       padding: 28px;
@@ -616,7 +617,7 @@
         <article class="card project">
           <div class="project-grid">
             <div class="project-image">
-              <img src="imageskitchen-aid.jpg.png" alt="Kitchen Aid Arm">
+              <img src="images/kitchen-aid.png" alt="Kitchen Aid Arm">
               </div>
             <div class="project-content">
               <div class="project-num">Project 01</div>
