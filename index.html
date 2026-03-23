@@ -10,13 +10,13 @@
   />
   <style>
     :root {
-      --bg: #f5f5f2;         /* 60% base */
+      --bg: #f5f5f2;
       --surface: #ffffff;
       --text: #1f2937;
       --muted: #5b6574;
-      --secondary: #315c7a;  /* 30% secondary */
+      --secondary: #315c7a;
       --secondary-soft: #e9eef3;
-      --accent: #f28c28;     /* 10% accent */
+      --accent: #f28c28;
       --border: rgba(49, 92, 122, 0.12);
       --shadow: 0 10px 30px rgba(31, 41, 55, 0.06);
       --radius: 24px;
@@ -29,7 +29,7 @@
 
     html {
       scroll-behavior: smooth;
-    }https://chatgpt.com/
+    }
 
     body {
       margin: 0;
@@ -417,6 +417,29 @@
       color: var(--muted);
     }
 
+    .resume-card {
+      padding: 20px;
+    }
+
+    .resume-frame {
+      width: 100%;
+      border: 1px solid rgba(49, 92, 122, 0.12);
+      border-radius: 16px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .resume-frame iframe {
+      display: block;
+      width: 100%;
+      height: 900px;
+      border: none;
+    }
+
+    .resume-actions {
+      margin-top: 16px;
+    }
+
     .contact {
       background: var(--secondary);
       color: white;
@@ -473,6 +496,10 @@
       .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .resume-frame iframe {
+        height: 700px;
+      }
     }
 
     @media (max-width: 680px) {
@@ -497,12 +524,17 @@
       .panel,
       .skill-card,
       .snapshot,
-      .contact {
+      .contact,
+      .resume-card {
         padding: 20px;
       }
 
       .hero p.lead {
         font-size: 17px;
+      }
+
+      .resume-frame iframe {
+        height: 500px;
       }
     }
   </style>
@@ -516,7 +548,8 @@
       </div>
 
       <div class="nav-links">
-        <a href="#projects">Case Studies</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
         <a href="#skills">Capabilities</a>
         <a href="#about">About & Experience</a>
         <a href="#contact">Contact</a>
@@ -536,6 +569,7 @@
 
       <div class="button-row">
         <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="#resume">Resume</a>
         <a class="btn btn-secondary" href="https://www.linkedin.com/in/-derek-li/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn btn-secondary" href="#about">Experience</a>
       </div>
@@ -549,8 +583,8 @@
           Expected Graduation
         </div>
         <div class="mini">
-          <strong>3.3 / 4.0</strong>
-          Current GPA
+          <strong>WIT</strong>
+          Mechanical Engineering Student
         </div>
         <div class="mini">
           <strong>Hands-On</strong>
@@ -565,12 +599,11 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Selected Work</div>
-          <h2>Engineering Case Studies</h2>
+          <h2>Projects</h2>
         </div>
         <p>
-          This layout follows the same overall structure as the reference portfolio:
-          each project is presented as a mini case study with challenge, solution,
-          impact, and tools used. :contentReference[oaicite:1]{index=1}
+          A selection of engineering projects highlighting my design process,
+          hands-on experience, and problem-solving approach.
         </p>
       </div>
 
@@ -680,6 +713,33 @@
     </div>
   </section>
 
+  <section id="resume">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Resume</div>
+          <h2>My Resume</h2>
+        </div>
+        <p>
+          View my resume directly below or download a copy.
+        </p>
+      </div>
+
+      <div class="card resume-card">
+        <div class="resume-frame">
+          <iframe
+            src="DerekLi'sResume.pdf"
+            title="Derek Li Resume">
+          </iframe>
+        </div>
+
+        <div class="resume-actions">
+          <a class="btn btn-secondary" href="DerekLi'sResume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="skills">
     <div class="container">
       <div class="section-head">
@@ -757,7 +817,7 @@
           <div class="label">Education</div>
           <strong>Wentworth Institute of Technology</strong><br />
           B.S. in Mechanical Engineering<br />
-          Expected Graduation: Aug. 2028 • GPA: 3.3 / 4.0<br /><br />
+          Expected Graduation: Aug. 2028<br /><br />
           Related coursework: Thermodynamics I, Engineering Design, Engineering Graphics,
           Engineering Statics, and Physics II.
         </div>
@@ -811,7 +871,8 @@
         </p>
 
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:LiD9@wit.edu">LiD9@wit.edu</a>
+          <a class="btn btn-primary" href="mailto:lid9@wit.edu">School Email</a>
+          <a class="btn btn-outline-light" href="mailto:Derekofvermont@gmail.com">Personal Email</a>
           <a class="btn btn-outline-light" href="https://www.linkedin.com/in/-derek-li/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn btn-outline-light" href="tel:3477021867">347.702.1867</a>
         </div>
