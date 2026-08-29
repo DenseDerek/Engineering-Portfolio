@@ -37,6 +37,11 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.drawer-active {
+      overflow: hidden;
     }
 
     a {
@@ -402,6 +407,250 @@
       margin-bottom: 14px;
     }
 
+    .experience-item-clickable {
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .experience-item-clickable:hover,
+    .experience-item-clickable:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(242, 140, 40, 0.7);
+      box-shadow: 0 16px 38px rgba(31, 41, 55, 0.12);
+      outline: none;
+    }
+
+    .experience-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      color: var(--secondary);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Alternating slide-on-scroll motion inspired by the experience timeline reference. */
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.slide-left {
+      transform: translateX(-64px);
+    }
+
+    .reveal.slide-right {
+      transform: translateX(64px);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .kalow-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .kalow-overlay.is-open {
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .drawer-backdrop {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      background: rgba(13, 35, 52, 0.68);
+      opacity: 0;
+      cursor: pointer;
+      transition: opacity 0.35s ease;
+    }
+
+    .kalow-overlay.is-open .drawer-backdrop {
+      opacity: 1;
+    }
+
+    .kalow-drawer {
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: min(760px, 92vw);
+      overflow-y: auto;
+      background: #f5f1e8;
+      color: #152d3d;
+      box-shadow: -24px 0 70px rgba(13, 35, 52, 0.28);
+      transform: translateX(100%);
+      transition: transform 0.48s cubic-bezier(0.2, 0.75, 0.2, 1);
+    }
+
+    .kalow-overlay.is-open .kalow-drawer {
+      transform: translateX(0);
+    }
+
+    .drawer-close {
+      position: sticky;
+      top: 16px;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin: 16px 16px -60px auto;
+      border: 1px solid rgba(21, 45, 61, 0.18);
+      border-radius: 50%;
+      background: rgba(245, 241, 232, 0.94);
+      color: #152d3d;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .drawer-close:hover,
+    .drawer-close:focus-visible {
+      background: var(--accent);
+      color: white;
+      outline: none;
+    }
+
+    .drawer-header {
+      padding: 48px 42px 28px;
+      border-bottom: 1px solid rgba(21, 45, 61, 0.14);
+    }
+
+    .drawer-index {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .drawer-header h2 {
+      margin: 14px 0 8px;
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    .drawer-header p {
+      margin: 0;
+      color: #5b6574;
+    }
+
+    .kalow-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: #152d3d;
+    }
+
+    .kalow-photo-grid figure,
+    .learning-figure {
+      margin: 0;
+      position: relative;
+      background: #152d3d;
+    }
+
+    .kalow-photo-grid img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+    }
+
+    .kalow-photo-grid figcaption,
+    .learning-figure figcaption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 18px;
+      color: white;
+      background: linear-gradient(transparent, rgba(13, 35, 52, 0.92));
+    }
+
+    .kalow-photo-grid figcaption strong,
+    .learning-figure figcaption strong,
+    .kalow-photo-grid figcaption span,
+    .learning-figure figcaption span {
+      display: block;
+    }
+
+    .kalow-photo-grid figcaption span,
+    .learning-figure figcaption span {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .drawer-section {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      padding: 36px 42px;
+      border-bottom: 1px solid rgba(21, 45, 61, 0.14);
+    }
+
+    .drawer-section.dark {
+      background: #152d3d;
+      color: white;
+    }
+
+    .drawer-section.dark p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .drawer-section-number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .drawer-section h3 {
+      margin-bottom: 14px;
+      font-size: 27px;
+    }
+
+    .drawer-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding-left: 20px;
+      color: #485765;
+    }
+
+    .learning-figure {
+      margin-top: 24px;
+    }
+
+    .learning-figure img {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+    }
+
+    .drawer-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .drawer-tags span {
+      padding: 9px 12px;
+      border: 1px solid rgba(21, 45, 61, 0.18);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
     .exp-top {
       display: flex;
       justify-content: space-between;
@@ -541,6 +790,48 @@
 
       .resume-frame iframe {
         height: 500px;
+      }
+
+      .reveal.slide-left,
+      .reveal.slide-right {
+        transform: translateY(34px);
+      }
+
+      .kalow-drawer {
+        width: 100vw;
+      }
+
+      .drawer-header,
+      .drawer-section {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .kalow-photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kalow-photo-grid img {
+        height: 480px;
+      }
+
+      .drawer-section {
+        grid-template-columns: 38px 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+
+      .reveal,
+      .reveal.slide-left,
+      .reveal.slide-right {
+        opacity: 1;
+        transform: none;
       }
     }
   </style>
@@ -839,19 +1130,41 @@
         <div class="eyebrow">Experience</div>
         <h2>What I’ve Done</h2>
 
+        <div
+          class="experience-item experience-item-clickable"
+          id="open-kalow"
+          role="button"
+          tabindex="0"
+          aria-haspopup="dialog"
+          aria-controls="kalow-showcase"
+        >
+          <div class="exp-top">
+            <div>
+              <strong>Kalow Technologies</strong>
+              <div class="exp-meta">Fabrication Intern • Rutland, VT</div>
+            </div>
+            <div class="exp-meta">Summers 2025–2026</div>
+          </div>
+          <div class="bullet-list">
+            <p>• Progressed from supporting shop-floor processes to independently operating a robotic press brake and CNC punch press.</p>
+            <p>• Interpreted engineering drawings to prepare and complete fabrication tasks with limited supervision.</p>
+            <p>• Supported powder coating operations including masking, hanging, and storing finished components while maintaining quality standards.</p>
+            <p>• Worked in a fast-paced production environment with strong attention to detail and daily output goals.</p>
+          </div>
+          <span class="experience-cta">Open work showcase <span aria-hidden="true">→</span></span>
+        </div>
+
         <div class="experience-item">
           <div class="exp-top">
             <div>
-              <strong>Kalow Technology</strong>
-              <div class="exp-meta">Intern • Rutland, VT</div>
+              <strong>Upward Bound</strong>
+              <div class="exp-meta">AmeriCorps Service</div>
             </div>
-            <div class="exp-meta">May 2025 – Sep 2025</div>
+            <div class="exp-meta">Summer 2024</div>
           </div>
           <div class="bullet-list">
-            <p>• Operated and assisted in manufacturing processes including countersinking, tapping, brake press operation, PEM installation, and surface finishing equipment.</p>
-            <p>• Interpreted engineering drawings independently to set up and execute machining tasks with minimal supervision.</p>
-            <p>• Supported powder coating operations including masking, hanging, and storing finished components while maintaining quality standards.</p>
-            <p>• Worked in a fast-paced production environment with strong attention to detail and daily output goals.</p>
+            <p>• Supported students in a structured residential learning environment and helped create an encouraging, accountable community.</p>
+            <p>• Strengthened communication, leadership, teamwork, and mentoring skills through day-to-day service.</p>
           </div>
         </div>
 
@@ -871,6 +1184,93 @@
       </div>
     </div>
   </section>
+
+  <div class="kalow-overlay" id="kalow-showcase" aria-hidden="true" inert>
+    <button class="drawer-backdrop" type="button" aria-label="Close Kalow work showcase"></button>
+    <aside class="kalow-drawer" role="dialog" aria-modal="true" aria-labelledby="kalow-title" tabindex="-1">
+      <button class="drawer-close" type="button" aria-label="Close Kalow work showcase">×</button>
+
+      <header class="drawer-header">
+        <div class="drawer-index">Work Experience / 01</div>
+        <h2 id="kalow-title">Kalow Technologies</h2>
+        <p>Fabrication Intern · Rutland, Vermont · Summers 2025–2026</p>
+      </header>
+
+      <div class="kalow-photo-grid" aria-label="Photos from my Kalow fabrication internship">
+        <figure>
+          <img
+            src="images/kalow-robotic-press-brake.webp"
+            alt="Derek Li standing in front of the TRUMPF TruBend robotic press-brake cell at Kalow Technologies"
+            loading="lazy"
+          />
+          <figcaption>
+            <strong>Robotic bending</strong>
+            <span>TRUMPF TruBend 7036 Cell Edition</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/kalow-cnc-punch-press.webp"
+            alt="Derek Li standing beside the CNC punch press he operated at Kalow Technologies"
+            loading="lazy"
+          />
+          <figcaption>
+            <strong>CNC punching</strong>
+            <span>Production sheet-metal equipment</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <section class="drawer-section">
+        <span class="drawer-section-number">01</span>
+        <div>
+          <h3>What I worked on</h3>
+          <ul class="drawer-list">
+            <li>Learned to set up and independently operate a robotic press brake.</li>
+            <li>Built confidence running CNC punch-press work with close attention to tooling and measurements.</li>
+            <li>Read engineering drawings to prepare and complete fabrication tasks with limited supervision.</li>
+            <li>Supported countersinking, tapping, PEM installation, surface finishing, and powder-coating preparation.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="drawer-section dark">
+        <span class="drawer-section-number">02</span>
+        <div>
+          <h3>What the work taught me</h3>
+          <p>
+            Not every run went perfectly. This warped sheet-metal part became one of the most useful lessons from my internship. I learned to slow down, confirm the tooling, double-check the drawing, triple-check the measurements, and ask a mentor for a final look before starting a run.
+          </p>
+          <figure class="learning-figure">
+            <img
+              src="images/kalow-learning-from-mistakes.webp"
+              alt="Derek Li holding a warped sheet-metal part while working in the Kalow Technologies fabrication shop"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>A mistake that improved my process</strong>
+              <span>Tooling check · drawing check · measurement check</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="drawer-section">
+        <span class="drawer-section-number">03</span>
+        <div>
+          <h3>Skills strengthened</h3>
+          <div class="drawer-tags">
+            <span>Machine setup</span>
+            <span>Quality checks</span>
+            <span>Shop safety</span>
+            <span>Problem solving</span>
+            <span>Production pace</span>
+            <span>Mentorship</span>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
 
   <section id="contact">
     <div class="container">
@@ -895,5 +1295,70 @@
   <footer>
     <div class="container">© 2026 Derek Li • Mechanical Engineering Portfolio</div>
   </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll(
+      ".section-head, .project, .skill-card, .panel, .experience-item"
+    );
+
+    revealItems.forEach((item, index) => {
+      item.classList.add("reveal");
+      if (item.classList.contains("experience-item") || item.classList.contains("project")) {
+        item.classList.add(index % 2 === 0 ? "slide-left" : "slide-right");
+      }
+    });
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+
+    const kalowTrigger = document.getElementById("open-kalow");
+    const kalowOverlay = document.getElementById("kalow-showcase");
+    const kalowDrawer = kalowOverlay.querySelector(".kalow-drawer");
+    const closeButtons = kalowOverlay.querySelectorAll(".drawer-close, .drawer-backdrop");
+    let lastFocusedElement = null;
+
+    function openKalowShowcase() {
+      lastFocusedElement = document.activeElement;
+      kalowOverlay.removeAttribute("inert");
+      kalowOverlay.setAttribute("aria-hidden", "false");
+      kalowOverlay.classList.add("is-open");
+      document.body.classList.add("drawer-active");
+      window.setTimeout(() => kalowDrawer.focus(), 80);
+    }
+
+    function closeKalowShowcase() {
+      kalowOverlay.classList.remove("is-open");
+      kalowOverlay.setAttribute("aria-hidden", "true");
+      kalowOverlay.setAttribute("inert", "");
+      document.body.classList.remove("drawer-active");
+      if (lastFocusedElement) lastFocusedElement.focus();
+    }
+
+    kalowTrigger.addEventListener("click", openKalowShowcase);
+    kalowTrigger.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openKalowShowcase();
+      }
+    });
+    closeButtons.forEach((button) => button.addEventListener("click", closeKalowShowcase));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && kalowOverlay.classList.contains("is-open")) {
+        closeKalowShowcase();
+      }
+    });
+  </script>
 </body>
 </html>
