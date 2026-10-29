@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Derek Li | Mechanical Engineering Portfolio</title>
   <meta name="description" content="Mechanical engineering portfolio for Derek Li, featuring CAD, manufacturing, fabrication, and hands-on engineering experience." />
-  <script>document.documentElement.classList.add("js");</script>
   <style>
     :root {
       --ink: #101820;
@@ -559,13 +558,16 @@
       .js .reveal { opacity: 1; transform: none; }
     }
   </style>
+  <link rel="stylesheet" href="assets/portfolio.css" />
+  <script src="assets/portfolio.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#experience">Skip to work experience</a>
   <nav class="site-nav" aria-label="Primary navigation">
     <a class="nav-brand" href="#top" aria-label="Derek Li, home"><span>DL</span><strong>Derek Li</strong></a>
     <div class="nav-links">
-      <a href="#work">Work</a>
       <a href="#experience">Experience</a>
+      <a href="#work">Projects</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#contact">Contact</a>
     </div>
@@ -576,6 +578,7 @@
   </nav>
 
   <header class="hero" id="top">
+    <span id="about" class="anchor-alias" aria-hidden="true"></span>
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="hero-rail"><span>Mechanical Engineering</span><span class="hero-rail-line"></span><span>Portfolio · 2026</span></div>
 
@@ -587,8 +590,8 @@
       <div class="reveal reveal-up" style="transition-delay: 140ms;">
         <p class="hero-lead">I’m Derek Li, a mechanical engineering student focused on CAD, manufacturing, and the hands-on work that turns an idea into a reliable part.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
-          <a class="button button-ghost" href="#experience">View experience</a>
+          <a class="button button-primary" href="#experience">Explore my experience <span aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" href="#work">View projects</a>
         </div>
       </div>
     </div>
@@ -596,7 +599,7 @@
     <div class="reveal reveal-right hero-dashboard" style="transition-delay: 220ms;">
       <div class="hero-card hero-card-main">
         <div class="status-line"><span></span> Available for engineering opportunities</div>
-        <div class="hero-card-number">03</div>
+        <div class="hero-card-number">02</div>
         <p>Featured engineering and fabrication projects</p>
       </div>
       <div class="hero-card-row">
@@ -607,62 +610,9 @@
   </header>
 
   <main>
-    <section class="section section-projects" id="work">
-      <div class="section-intro">
-        <div class="reveal reveal-left"><p class="section-label">01 / Selected work</p><h2>Built through<br />iteration.</h2></div>
-        <div class="reveal reveal-right" style="transition-delay: 100ms;"><p class="section-copy">Projects that show how I approach constraints, communicate design intent, and learn through making.</p></div>
-      </div>
-
-      <div class="project-list">
-        <div class="reveal reveal-left">
-          <article class="project-card">
-            <div class="project-visual">
-              <img src="images/kitchen-aid.jpg.png" alt="3D-printed KitchenAid arm engineering project" loading="lazy" />
-              <span class="project-number">01</span>
-            </div>
-            <div class="project-content">
-              <p class="project-category">Engineering Design · Team Project</p>
-              <h3>KitchenAid Arm</h3>
-              <p>Iterated through multiple SolidWorks prototypes to balance range, strength, appearance, material use, and cost in a wall-mounted arm system.</p>
-              <div class="tag-row"><span>SolidWorks</span><span>3D Printing</span><span>Iteration</span></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="reveal reveal-right">
-          <article class="project-card">
-            <div class="project-visual">
-              <img src="images/can-crusher.jpg.png" alt="Wall-mounted can crusher CAD assembly" loading="lazy" />
-              <span class="project-number">02</span>
-            </div>
-            <div class="project-content">
-              <p class="project-category">Engineering Graphics · Team Project</p>
-              <h3>Wall-Mounted Can Crusher</h3>
-              <p>Modeled complex interacting parts, created engineering drawings, and presented a complete SolidWorks assembly designed to function as one system.</p>
-              <div class="tag-row"><span>CAD Assembly</span><span>Drawings</span><span>Design Communication</span></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="reveal reveal-left">
-          <article class="project-card">
-            <div class="project-visual project-visual-type">
-              <span>03</span><strong>FAB</strong><span class="project-number">03</span>
-            </div>
-            <div class="project-content">
-              <p class="project-category">Wentworth Society of Manufacturing</p>
-              <h3>Steel Heart Fabrication</h3>
-              <p>Cut, bent, MIG welded, sanded, and coated a steel heart assembly while using manual machining and precision measurement techniques.</p>
-              <div class="tag-row"><span>MIG Welding</span><span>Manual Machining</span><span>Finishing</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-experience" id="experience">
+    <section class="section section-experience" id="experience" aria-labelledby="experience-title">
       <div class="section-intro section-intro-light">
-        <div class="reveal reveal-left"><p class="section-label">02 / Experience</p><h2>Learning on<br />the floor.</h2></div>
+        <div class="reveal reveal-left"><p class="section-label">01 / Work experience</p><h2 id="experience-title">Learning on<br />the floor.</h2></div>
         <div class="reveal reveal-right" style="transition-delay: 100ms;"><p class="section-copy">Each role has strengthened a different part of my engineering practice—from precise fabrication to patient mentorship.</p></div>
       </div>
 
@@ -671,12 +621,17 @@
 
         <div class="reveal reveal-right timeline-item timeline-right">
           <span class="timeline-node" aria-hidden="true">K</span>
-          <button class="experience-card experience-card-featured" id="open-kalow" type="button" aria-haspopup="dialog" aria-controls="kalow-showcase">
-            <span class="experience-date">Summers 2025–2026</span>
-            <span class="experience-body">
+          <div class="timeline-meta"><span class="experience-date">Summers 2025–2026</span><span>Rutland, Vermont</span></div>
+          <button class="experience-card experience-card-featured photo-experience" id="open-kalow" data-showcase="kalow-showcase" type="button" aria-haspopup="dialog" aria-controls="kalow-showcase" aria-expanded="false">
+            <span class="experience-heading">
               <span class="experience-kicker">Fabrication Internship</span>
               <span class="experience-title">Kalow Technologies</span>
-              <span class="experience-location">⌖ Rutland, Vermont</span>
+            </span>
+            <span class="experience-cover">
+              <img src="images/SME/Kalow.webp" alt="Kalow Technologies building and red gear-shaped sign in Rutland, Vermont" width="1600" height="1200" loading="lazy" decoding="async" />
+              <span class="cover-caption">Two summers on the fabrication floor <span aria-hidden="true">↗</span></span>
+            </span>
+            <span class="experience-body">
               <span class="experience-summary">Progressed from supporting shop-floor processes to independently operating advanced fabrication equipment.</span>
               <span class="experience-link">Open work showcase <span aria-hidden="true">↗</span></span>
             </span>
@@ -685,28 +640,91 @@
 
         <div class="reveal reveal-left timeline-item timeline-left">
           <span class="timeline-node" aria-hidden="true">U</span>
-          <article class="experience-card">
-            <span class="experience-date">Summer 2026</span>
-            <span class="experience-body">
+          <div class="timeline-meta"><span class="experience-date">Summer 2026</span><span>Castleton, Vermont</span></div>
+          <article class="experience-card photo-experience">
+            <span class="experience-heading">
               <span class="experience-kicker">AmeriCorps Service</span>
               <span class="experience-title">Upward Bound</span>
-              <span class="experience-location">⌖ Castleton, Vermont</span>
+            </span>
+            <span class="experience-cover ub-cover">
+              <img src="images/SME/UB.jpeg" alt="Castleton University Upward Bound — Be College Bound" width="447" height="447" loading="lazy" />
+              <span class="cover-caption">Mentoring students through AmeriCorps</span>
+            </span>
+            <span class="experience-body">
               <span class="experience-summary">Supported students through activities, college-focused programming, and one-on-one mentorship.</span>
+              <span class="experience-footnote">Mentorship · Community · Leadership</span>
             </span>
           </article>
         </div>
 
         <div class="reveal reveal-right timeline-item timeline-right">
           <span class="timeline-node" aria-hidden="true">W</span>
-          <article class="experience-card">
-            <span class="experience-date">Current</span>
-            <span class="experience-body">
-              <span class="experience-kicker">Student Organization</span>
+          <div class="timeline-meta"><span class="experience-date">Current</span><span>Boston, Massachusetts</span></div>
+          <button class="experience-card experience-card-featured photo-experience" id="open-sme" data-showcase="sme-showcase" type="button" aria-haspopup="dialog" aria-controls="sme-showcase" aria-expanded="false">
+            <span class="experience-heading">
+              <span class="experience-kicker">Vice President · Student Organization</span>
               <span class="experience-title">Wentworth Society of Manufacturing</span>
-              <span class="experience-location">⌖ Boston, Massachusetts</span>
-              <span class="experience-summary">Building hands-on skill through manual machining, welding, measurement, and fabrication projects.</span>
             </span>
-          </article>
+            <span class="experience-cover sme-cover">
+              <img src="images/SME/ClubFair.jpeg" alt="Derek and fellow SME members sharing manufacturing projects at Wentworth's club fair" width="320" height="240" loading="lazy" decoding="async" />
+              <span class="cover-caption">Meet the team. See what we’re building. <span aria-hidden="true">↗</span></span>
+            </span>
+            <span class="experience-body">
+              <span class="experience-summary">Learning by making—and helping others do the same. Explore our workshops, machining projects, and time in the lab.</span>
+              <span class="experience-link">Explore SME photos &amp; videos <span aria-hidden="true">↗</span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-projects" id="work" aria-labelledby="projects-title">
+      <div class="iteration-story" id="iteration-story">
+        <div class="iteration-stage">
+          <div class="iteration-backdrop" aria-hidden="true">
+            <img class="iteration-atmosphere" src="images/SME/InfrontTom.webp" alt="" width="1440" height="1920" loading="lazy" />
+            <img class="iteration-portrait" src="images/SME/InfrontTom.webp" alt="" width="1440" height="1920" loading="lazy" />
+          </div>
+          <div class="iteration-shade" aria-hidden="true"></div>
+          <div class="iteration-copy">
+            <p class="section-label">02 / Selected projects</p>
+            <h2 id="projects-title">Built through<br />iteration.</h2>
+            <p class="section-copy">Projects that show how I approach constraints, communicate design intent, and learn through making.</p>
+            <a class="iteration-link" href="#project-list">Explore the projects <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="iteration-caption"><span>Derek Li · Gillette Stadium</span><span class="iteration-scroll" aria-hidden="true">Keep scrolling to reveal <span>↓</span></span></div>
+        </div>
+      </div>
+      <div class="section projects-body">
+        <div class="project-list" id="project-list">
+          <div class="reveal reveal-left">
+            <article class="project-card">
+              <div class="project-visual">
+                <img src="images/kitchen-aid.jpg.png" alt="3D-printed KitchenAid arm engineering project" loading="lazy" />
+                <span class="project-number">01</span>
+              </div>
+              <div class="project-content">
+                <p class="project-category">Engineering Design · Team Project</p>
+                <h3>KitchenAid Arm</h3>
+                <p>Iterated through multiple SolidWorks prototypes to balance range, strength, appearance, material use, and cost in a wall-mounted arm system.</p>
+                <div class="tag-row"><span>SolidWorks</span><span>3D Printing</span><span>Iteration</span></div>
+              </div>
+            </article>
+          </div>
+          <div class="reveal reveal-right">
+            <article class="project-card">
+              <div class="project-visual">
+                <img src="images/can-crusher.jpg.png" alt="Wall-mounted can crusher CAD assembly" loading="lazy" />
+                <span class="project-number">02</span>
+              </div>
+              <div class="project-content">
+                <p class="project-category">Engineering Graphics · Team Project</p>
+                <h3>Wall-Mounted Can Crusher</h3>
+                <p>Modeled complex interacting parts, created engineering drawings, and presented a complete SolidWorks assembly designed to function as one system.</p>
+                <div class="tag-row"><span>CAD Assembly</span><span>Drawings</span><span>Design Communication</span></div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -738,7 +756,7 @@
     </section>
   </main>
 
-  <div class="kalow-overlay" id="kalow-showcase" aria-hidden="true" inert>
+  <div class="kalow-overlay showcase-overlay" id="kalow-showcase" aria-hidden="true" inert>
     <button class="sheet-backdrop" type="button" aria-label="Close Kalow work showcase"></button>
     <aside class="kalow-sheet" role="dialog" aria-modal="true" aria-labelledby="kalow-title" tabindex="-1">
       <button class="sheet-close" type="button" aria-label="Close Kalow work showcase">×</button>
@@ -804,52 +822,94 @@
     </aside>
   </div>
 
+  <div class="kalow-overlay showcase-overlay" id="sme-showcase" aria-hidden="true" inert>
+    <button class="sheet-backdrop" type="button" aria-label="Close SME showcase"></button>
+    <aside class="kalow-sheet sme-sheet" role="dialog" aria-modal="true" aria-labelledby="sme-title" tabindex="-1">
+      <button class="sheet-close" type="button" aria-label="Close SME showcase">×</button>
+      <header class="sheet-heading">
+        <div class="sheet-index">Student leadership / Inside SME</div>
+        <h2 id="sme-title">Made together.<br />Learned together.</h2>
+        <p class="sheet-description">Wentworth Society of Manufacturing · Vice President · Boston, MA</p>
+        <p class="sme-intro">From a first SolidWorks sketch to a machined part, SME is a place to turn curiosity into hands-on experience. Here’s a closer look at the workshops, projects, and people behind the work.</p>
+        <nav class="sheet-chapters" aria-label="SME showcase chapters">
+          <a href="#sme-community">01 / Community</a>
+          <a href="#sme-making">02 / Making</a>
+          <a href="#sme-motion">03 / In motion</a>
+        </nav>
+      </header>
+
+      <section class="sme-chapter" id="sme-community" aria-labelledby="community-title">
+        <div class="chapter-heading"><span class="sheet-section-number">01 / Community &amp; workshops</span><h3 id="community-title">A place to learn together.</h3><p>Sharing what we build, learning new tools, and connecting with students who want to make things.</p></div>
+        <p class="gallery-hint">Hover for the story. Select any photo to take a closer look.</p>
+        <div class="sme-gallery community-gallery">
+          <a class="media-card" href="images/SME/ClubFair.jpeg" data-gallery="sme" data-title="Meet the SME team" data-description="Sharing our projects and introducing the club at Wentworth’s club fair." aria-haspopup="dialog">
+            <span class="media-frame landscape-frame"><img src="images/SME/ClubFair.jpeg" alt="SME members standing behind their club-fair table of student projects" width="320" height="240" loading="lazy" decoding="async" /><span class="media-expand" aria-hidden="true">↗</span><span class="media-hover">Sharing our projects at the club fair.</span></span>
+            <span class="media-label"><span>Meet the SME team</span><small>Club fair</small></span>
+          </a>
+          <a class="media-card" href="images/SME/TableSME.jpeg" data-gallery="sme" data-title="Sharing what we make" data-description="Representing SME and talking with visitors about student manufacturing projects." aria-haspopup="dialog">
+            <span class="media-frame landscape-frame"><img src="images/SME/TableSME.jpeg" alt="Derek and another SME member at an outdoor table displaying manufacturing projects" width="240" height="320" loading="lazy" decoding="async" /><span class="media-expand" aria-hidden="true">↗</span><span class="media-hover">Connecting with students through hands-on projects.</span></span>
+            <span class="media-label"><span>Sharing what we make</span><small>Campus outreach</small></span>
+          </a>
+          <a class="media-card" href="images/SME/WorkShop.jpeg" data-gallery="sme" data-title="SolidWorks 101 workshop" data-description="A workshop for learning the fundamentals of SolidWorks alongside fellow students." aria-haspopup="dialog">
+            <span class="media-frame landscape-frame"><img src="images/SME/WorkShop.jpeg" alt="Students using laptops during a SolidWorks workshop in a Wentworth classroom" width="240" height="320" loading="lazy" decoding="async" /><span class="media-expand" aria-hidden="true">↗</span><span class="media-hover">Workshop for SolidWorks 101.</span></span>
+            <span class="media-label"><span>SolidWorks 101</span><small>Workshop</small></span>
+          </a>
+          <a class="media-card" href="images/SME/Lab.jpeg" data-gallery="sme" data-title="Learning on the shop floor" data-description="Hands-on lab time with machine tools, shared workspaces, and fellow student makers." aria-haspopup="dialog">
+            <span class="media-frame landscape-frame"><img src="images/SME/Lab.jpeg" alt="Students working at machine tools in Wentworth’s manufacturing lab" width="240" height="320" loading="lazy" decoding="async" /><span class="media-expand" aria-hidden="true">↗</span><span class="media-hover">Taking the plan from the classroom into the lab.</span></span>
+            <span class="media-label"><span>Learning on the shop floor</span><small>Lab session</small></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="sme-chapter sme-chapter-dark" id="sme-making" aria-labelledby="making-title">
+        <div class="chapter-heading"><span class="sheet-section-number">02 / The making process</span><h3 id="making-title">From stock to<br />Turner’s cube.</h3><p>A closer look at the material, the machining process, and the finished part.</p></div>
+        <div class="sme-gallery process-gallery">
+          <a class="media-card" href="images/SME/Stock.jpeg" data-gallery="sme" data-title="Start with the stock" data-description="Aluminum blanks before machining—the starting point for the cube project." aria-haspopup="dialog">
+            <span class="media-frame"><img src="images/SME/Stock.jpeg" alt="A hand holding several square aluminum stock pieces" width="240" height="320" loading="lazy" decoding="async" /><span class="media-expand" aria-hidden="true">↗</span><span class="media-hover">Aluminum stock, ready for the next operation.</span></span>
+            <span class="media-label"><span>01 / The material</span><small>Aluminum stock</small></span>
+          </a>
+          <a class="media-card" href="images/SME/WorkingOnCube.jpeg" data-gallery="sme" data-title="Working on the cube" data-description="The cube secured in the milling machine during machining." aria-haspopup="dialog">
+            <span class="media-frame"><img src="images/SME/WorkingOnCube.jpeg" alt="A cube clamped under a milling machine spindle, surrounded by aluminum chips" width="240" height="320" loading="lazy" decoding="async" /><span class="media-expand" aria-hidden="true">↗</span><span class="media-hover">Machining the features, one operation at a time.</span></span>
+            <span class="media-label"><span>02 / The process</span><small>At the mill</small></span>
+          </a>
+          <a class="media-card" href="images/SME/TurnersCube.jpeg" data-gallery="sme" data-title="The finished Turner’s cube" data-description="The finished machined cube, showing the nested geometry inside the original stock." aria-haspopup="dialog">
+            <span class="media-frame"><img src="images/SME/TurnersCube.jpeg" alt="A finished aluminum Turner’s cube with nested circular openings resting in a hand" width="240" height="320" loading="lazy" decoding="async" /><span class="media-expand" aria-hidden="true">↗</span><span class="media-hover">The finished Turner’s cube and its nested geometry.</span></span>
+            <span class="media-label"><span>03 / The result</span><small>Turner’s cube</small></span>
+          </a>
+        </div>
+        <div class="sheet-tags"><span>Machining</span><span>Workholding</span><span>Process planning</span><span>Learning by doing</span></div>
+      </section>
+
+      <section class="sme-chapter" id="sme-motion" aria-labelledby="motion-title">
+        <div class="chapter-heading"><span class="sheet-section-number">03 / In motion</span><h3 id="motion-title">See the process.</h3><p>Two short clips from the lab. Press play to watch here, or use the player’s fullscreen control.</p></div>
+        <div class="video-gallery">
+          <figure class="video-card">
+            <video controls playsinline preload="none" poster="images/SME/CNCMilling-poster.webp" aria-label="CNC milling in the lab" aria-describedby="cnc-caption">
+              <source src="images/SME/CNCMilling.mp4" type="video/mp4" />
+              Your browser does not support inline video. <a href="images/SME/CNCMilling.mp4">Open the CNC milling clip.</a>
+            </video>
+            <figcaption id="cnc-caption"><strong>CNC milling</strong><span>A short look at the machine in action.</span><a href="images/SME/CNCMilling.mp4" target="_blank" rel="noreferrer">Open video ↗</a></figcaption>
+          </figure>
+          <figure class="video-card">
+            <video controls playsinline preload="none" poster="images/SME/LabWork-poster.webp" aria-label="Hands-on work in the manufacturing lab" aria-describedby="lab-caption">
+              <source src="images/SME/LabWork.mp4" type="video/mp4" />
+              Your browser does not support inline video. <a href="images/SME/LabWork.mp4">Open the lab work clip.</a>
+            </video>
+            <figcaption id="lab-caption"><strong>Hands-on lab work</strong><span>Learning through time at the machine.</span><a href="images/SME/LabWork.mp4" target="_blank" rel="noreferrer">Open video ↗</a></figcaption>
+          </figure>
+        </div>
+      </section>
+      <a class="sheet-cta" href="#contact">Let’s talk manufacturing ↗</a>
+    </aside>
+  </div>
+
+  <dialog class="media-viewer" id="media-viewer" aria-labelledby="viewer-title" aria-describedby="viewer-description">
+    <div class="viewer-toolbar"><span id="viewer-count" aria-live="polite"></span><button class="viewer-close" type="button" aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button></div>
+    <div class="viewer-stage"><button class="viewer-previous" type="button" aria-label="Previous photo">←</button><img id="viewer-image" alt="" /><button class="viewer-next" type="button" aria-label="Next photo">→</button></div>
+    <div class="viewer-caption" aria-live="polite"><h2 id="viewer-title"></h2><p id="viewer-description"></p></div>
+    <div class="viewer-thumbnails" aria-label="Choose a photo"></div>
+  </dialog>
+
   <footer><span>Derek Li · Mechanical Engineering</span><span>Designed to show the work behind the work · 2026</span></footer>
-
-  <script>
-    const revealItems = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.14, rootMargin: "0px 0px -5% 0px" });
-      revealItems.forEach(function (item) { revealObserver.observe(item); });
-    } else {
-      revealItems.forEach(function (item) { item.classList.add("is-visible"); });
-    }
-
-    const kalowTrigger = document.getElementById("open-kalow");
-    const kalowOverlay = document.getElementById("kalow-showcase");
-    const kalowSheet = kalowOverlay.querySelector(".kalow-sheet");
-    const kalowCloseControls = kalowOverlay.querySelectorAll(".sheet-close, .sheet-backdrop, .sheet-cta");
-    let previousFocus = null;
-
-    function openKalow() {
-      previousFocus = document.activeElement;
-      kalowOverlay.removeAttribute("inert");
-      kalowOverlay.setAttribute("aria-hidden", "false");
-      kalowOverlay.classList.add("is-open");
-      document.body.classList.add("drawer-open");
-      window.setTimeout(function () { kalowSheet.focus(); }, 80);
-    }
-
-    function closeKalow() {
-      kalowOverlay.classList.remove("is-open");
-      kalowOverlay.setAttribute("aria-hidden", "true");
-      kalowOverlay.setAttribute("inert", "");
-      document.body.classList.remove("drawer-open");
-      if (previousFocus) previousFocus.focus();
-    }
-
-    kalowTrigger.addEventListener("click", openKalow);
-    kalowCloseControls.forEach(function (control) { control.addEventListener("click", closeKalow); });
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && kalowOverlay.classList.contains("is-open")) closeKalow();
-    });
-  </script>
 </body>
 </html>
