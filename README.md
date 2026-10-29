@@ -3,7 +3,7 @@
 This is my mechanical engineering portfolio built using GitHub Pages.
 
 ## About Me
-Mechanical Engineering student at Wentworth Institute of Technology with experience in CAD, manufacturing, fabrication, and prototype development.
+Mechanical Engineering student at Wentworth Institute of Technology, minoring in manufacturing
 
 ## Projects
 - Kitchen Aid Arm
@@ -12,14 +12,13 @@ Mechanical Engineering student at Wentworth Institute of Technology with experie
 
 ## Experience
 - Kalow Technology — Intern
-- Wentworth Society of Manufacturing — Member
+- Wentworth Society of Manufacturing — VP
 
 ## Skills
 - SolidWorks
-- MATLAB
 - Python
-- Multisim
 - Manufacturing & Fabrication
+- All Microsoft softwares 
 
 ## Contact
 Email: LiD9@wit.edu  
